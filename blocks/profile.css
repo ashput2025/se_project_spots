@@ -32,10 +32,11 @@
   width: 107px;
   height: 16px;
   border-style: none;
+  background-color: transparent;
 }
 
 .profile__button_new-post {
-  margin-left: auto;
+  margin: auto 0 0 auto;
   border-style: none;
-  background-color: none;
+  background-color: transparent;
 }
