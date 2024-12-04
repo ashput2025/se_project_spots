@@ -8,5 +8,6 @@
   gap: 40px 20px;
   justify-content: center;
   margin: 0;
-  padding: 0;
+  padding: 0 0 40px;
+  border-bottom: 1px rgba(33, 33, 33, 0.4) solid;
 }
