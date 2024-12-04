@@ -1,0 +1,41 @@
+.profile {
+  display: flex;
+  padding: 34px 0 20px;
+  border-bottom: 1px rgba(33, 33, 33, 0.4) solid;
+}
+
+.profile__image {
+  margin-right: 20px;
+  border-radius: 10px;
+}
+
+.profile__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__name {
+  font-size: 32px;
+  line-height: 32px;
+  width: 420px;
+  margin: 0 0 12px;
+}
+
+.profile__description {
+  font-size: 16px;
+  line-height: 16px;
+  margin: 0;
+}
+
+.profile__button_edit-profile {
+  margin-top: auto;
+  width: 107px;
+  height: 16px;
+  border-style: none;
+}
+
+.profile__button_new-post {
+  margin-left: auto;
+  border-style: none;
+  background-color: none;
+}
