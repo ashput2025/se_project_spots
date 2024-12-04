@@ -1,0 +1,37 @@
+.card {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  width: 414px;
+  height: 445px;
+}
+
+.card__image {
+  width: 413px;
+  height: 413px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin: 0 0 12px;
+}
+
+.card__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__title {
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0;
+}
+
+.card__like-button {
+  background-image: url(../images/heart.svg);
+  width: 23px;
+  height: 20px;
+  border: none;
+  background-color: transparent;
+  opacity: 40%;
+}
