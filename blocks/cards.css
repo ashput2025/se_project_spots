@@ -11,3 +11,13 @@
   padding: 0 0 40px;
   border-bottom: 1px rgba(33, 33, 33, 0.4) solid;
 }
+
+@media screen and (max-width: 627px) {
+  .cards {
+    padding: 20px 0;
+  }
+  .cards__list {
+    margin: 0;
+    padding: 20;
+  }
+}

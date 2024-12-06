@@ -7,6 +7,8 @@
 .profile__image {
   margin-right: 20px;
   border-radius: 10px;
+  height: 190px;
+  width: 190px;
 }
 
 .profile__column {
@@ -19,6 +21,7 @@
   font-size: 32px;
   line-height: 32px;
   font-weight: 500;
+  line-height: 1;
   width: 420px;
   margin: 0 0 12px;
 }
@@ -36,6 +39,7 @@
   height: 16px;
   border-style: none;
   background-color: transparent;
+  opacity: 70%;
 }
 
 .profile__button_new-post {
@@ -44,4 +48,41 @@
   background-color: transparent;
   width: 149px;
   height: 52px;
+  background-color: rgba(33, 33, 33, 1);
+  color: rgba(252, 245, 229, 1);
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 627px) {
+  .profile {
+    flex-direction: column;
+    max-width: 288px;
+    height: 274px;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0 0;
+  }
+  .profile__image {
+    width: 80px;
+    height: 80px;
+    margin: 0 0 12px;
+  }
+  .profile__name {
+    margin-bottom: 6px;
+    font-size: 20px;
+  }
+  .profile__description {
+    margin-bottom: 32px;
+  }
+  .profile__button_edit-profile {
+    margin-bottom: 20px;
+    width: auto;
+    font-size: 20px;
+  }
+  .profile__button_new-post {
+    width: 288px;
+    height: 52px;
+    margin: 0;
+    padding: 0;
+  }
 }
