@@ -47,6 +47,8 @@
   margin-top: auto;
   width: 120px;
   height: 16px;
+  font-size: 16px;
+  line-height: 1;
   border-style: none;
   background-color: transparent;
   opacity: 70%;
@@ -78,6 +80,7 @@
 @media screen and (max-width: 627px) {
   .profile {
     flex-direction: column;
+    margin: 0 auto 12px auto;
     max-width: 288px;
     height: 274px;
     align-items: center;
@@ -99,12 +102,12 @@
   .profile__button_edit-profile {
     margin-bottom: 20px;
     width: auto;
-    font-size: 20px;
+    font-size: 16px;
   }
   .profile__button_new-post {
-    width: 288px;
     height: 52px;
     margin: 0;
     padding: 0;
+    font-size: 16px;
   }
 }
