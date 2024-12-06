@@ -19,18 +19,28 @@
 
 .profile__name {
   font-size: 32px;
-  line-height: 32px;
   font-weight: 500;
   line-height: 1;
   width: 420px;
   margin: 0 0 12px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .profile__description {
   font-size: 16px;
-  line-height: 16px;
+  line-height: 1;
   margin: 0;
+  max-width: 420px;
   color: rgba(33, 33, 33, 0.7);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .profile__button_edit-profile {
@@ -40,6 +50,12 @@
   border-style: none;
   background-color: transparent;
   opacity: 70%;
+  transition: opacity 0.4s;
+}
+
+.profile__button_edit-profile:hover {
+  opacity: 1;
+  cursor: pointer;
 }
 
 .profile__button_new-post {
@@ -51,6 +67,12 @@
   background-color: rgba(33, 33, 33, 1);
   color: rgba(252, 245, 229, 1);
   border-radius: 10px;
+  transition: opacity 0.3s;
+}
+
+.profile__button_new-post:hover {
+  opacity: 80%;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 627px) {
