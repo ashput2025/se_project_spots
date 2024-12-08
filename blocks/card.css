@@ -5,13 +5,12 @@
   display: flex;
   flex-direction: column;
   width: 414px;
-  height: 445px;
 }
 
 .card__image {
   width: 413px;
   height: 413px;
-  border-radius: 10px;
+  border-radius: 8px;
   object-fit: cover;
   margin: 0 0 12px;
 }
@@ -25,6 +24,7 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
+  max-width: 90%;
   margin: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -49,7 +49,6 @@
 @media screen and (max-width: 627px) {
   .card {
     align-items: center;
-    height: 318px;
     padding: 0;
   }
   .card__image {
@@ -59,6 +58,7 @@
   }
   .card__title {
     font-size: 16px;
+    line-height: 1;
   }
   .card__like-button {
     padding: 0;
