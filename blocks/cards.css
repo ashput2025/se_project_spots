@@ -19,5 +19,7 @@
   .cards__list {
     padding-bottom: 20px;
     gap: 22px;
+    display: flex;
+    flex-direction: column;
   }
 }
