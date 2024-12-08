@@ -16,8 +16,17 @@ Spots is an interactive social media web application where you can view gallerie
 * grid
 * flexbox
 
-## Images
+## Images and Video
 
 ![alt text](./images/Header.jpg)
 
 ![alt text](./images/Frame_36.jpg)
+
+## Deployment
+
+Visit the site at: https://ashput2025.github.io/se_project_spots/
+
+## Videos
+
+Video going through the techniques used in this app:
+https://drive.google.com/file/d/1gpB0voHyIdPRE0k0APmksbfMgKpj0scU/view?usp=drive_link
