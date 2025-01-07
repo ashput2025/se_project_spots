@@ -24,3 +24,19 @@ const initialCards = [
     link: "https://unsplash.com/photos/a-view-of-the-grand-canyon-of-the-grand-canyon-D391N3cKjiY",
   },
 ];
+
+const editModal = document.querySelector("#edit-modal");
+const editButton = document.querySelector(".profile__edit-btn");
+const exitModal = editModal.querySelector(".modal__close-btn");
+
+function openModal() {
+  editModal.classList.add("modal_opened");
+}
+
+editButton.addEventListener("click", openModal);
+
+function closeModal() {
+  editModal.classList.remove("modal_opened");
+}
+
+exitModal.addEventListener("click", closeModal);
