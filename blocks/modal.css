@@ -31,12 +31,17 @@
   position: absolute;
   top: 32px;
   right: 50px;
-  width: 40px;
-  height: 40px;
-  background-image: url(../images/Close_icon.svg);
   background-color: transparent;
   border: none;
   cursor: pointer;
+  font-style: 24px;
+  font-weight: 500;
+  color: rgba(33, 33, 33, 0.4);
+}
+
+.modal__close-btn:hover {
+  cursor: pointer;
+  color: rgba(33, 33, 33, 1);
 }
 
 .modal__title {
@@ -70,6 +75,11 @@
   border-radius: 8px;
 }
 
+.modal__input:hover {
+  cursor: pointer;
+  border-color: rgba(33, 33, 33, 1);
+}
+
 .modal__submit-btn {
   width: 156px;
   padding: 18px 0;
@@ -80,6 +90,7 @@
   font-size: 16px;
   line-height: 1;
   border: none;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 715px) {
