@@ -1,27 +1,33 @@
 const initialCards = [
   {
-    name: "Beach Trip",
-    link: "https://unsplash.com/photos/seashore-under-clear-blue-sky-during-daytime-g0Qdolm3K14",
+    name: "Val Thorens",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
+    alt: "image of Val Thorens",
   },
   {
-    name: "Moving Day",
-    link: "https://unsplash.com/photos/a-pile-of-cardboard-boxes-sitting-on-top-of-a-hard-wood-floor-iIzkK-rOEzE",
+    name: "Restaurant terrace",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg",
+    alt: "picture taken from a restaurant terrace",
   },
   {
-    name: "Tokyo",
-    link: "https://unsplash.com/photos/people-gathered-outside-buildings-and-vehicles-alY6_OpdwRQ",
+    name: "An outdoor cafe",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg",
+    alt: "front enterance of a cafe",
   },
   {
-    name: "New York",
-    link: "https://unsplash.com/photos/a-view-of-a-city-at-night-from-the-top-of-a-building-MdrJol8olLg",
+    name: "A very long bridge, over the forest and through the trees",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
+    alt: "A long and narrow bridge over treetops",
   },
   {
-    name: "Camping in the Mountains",
-    link: "https://unsplash.com/photos/a-dirt-path-in-the-middle-of-a-forest-76OiaaEZJ5k",
+    name: "Mountain house",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
+    alt: "A house on a mountain",
   },
   {
-    name: "Grand Canyon",
-    link: "https://unsplash.com/photos/a-view-of-the-grand-canyon-of-the-grand-canyon-D391N3cKjiY",
+    name: "Tunnel with morning light",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg",
+    alt: "A long hallway with windows",
   },
 ];
 
@@ -33,6 +39,22 @@ const modalNameInput = document.querySelector("#profile__name_input");
 const modalDescInput = document.querySelector("#profile__description_input");
 const profileName = document.querySelector(".profile__name");
 const profileDesc = document.querySelector(".profile__description");
+const cardTemplate = document.querySelector("#card-template");
+const cardsList = document.querySelector(".cards__list");
+
+function getCardElement(x) {
+  const cardElement = cardTemplate.content
+    .querySelector(".card")
+    .cloneNode(true);
+
+  const cardNameEl = cardElement.querySelector(".card__title");
+  const cardLinkEl = cardElement.querySelector(".card__image");
+
+  cardNameEl.textContent = x.name;
+  cardLinkEl.src = x.link;
+
+  return cardElement;
+}
 
 function openModal() {
   editModal.classList.add("modal_opened");
@@ -54,3 +76,8 @@ function handleProfileFormSubmit(evt) {
 editButton.addEventListener("click", openModal);
 exitModal.addEventListener("click", closeModal);
 profileFormElement.addEventListener("submit", handleProfileFormSubmit);
+
+for (let i = 0; i < initialCards.length; i++) {
+  const cardElement = getCardElement(initialCards[i]);
+  cardsList.prepend(cardElement);
+}

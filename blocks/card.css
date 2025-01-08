@@ -7,6 +7,11 @@
   width: 414px;
 }
 
+.card__content {
+  display: flex;
+  justify-content: space-between;
+}
+
 .card__image {
   width: 413px;
   height: 413px;
@@ -14,12 +19,6 @@
   object-fit: cover;
   margin: 0 0 12px;
 }
-
-.card__content {
-  display: flex;
-  justify-content: space-between;
-}
-
 .card__title {
   font-weight: 500;
   font-size: 20px;
