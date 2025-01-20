@@ -13,7 +13,7 @@
   visibility: hidden;
 }
 
-.modal_opened {
+.modal_is-opened {
   visibility: visible;
 }
 
@@ -34,9 +34,10 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  font-style: 24px;
+  font-style: 30px;
   font-weight: 500;
   color: rgba(33, 33, 33, 0.4);
+  transition: color 0.4s;
 }
 
 .modal__close-btn:hover {
@@ -73,6 +74,7 @@
   font-size: 20px;
   line-height: 1;
   border-radius: 8px;
+  transition: border-color 0.4s;
 }
 
 .modal__input:hover {
