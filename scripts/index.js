@@ -39,14 +39,18 @@ const modalNameInput = document.querySelector("#profile__name_input");
 const modalDescInput = document.querySelector("#profile__description_input");
 const profileName = document.querySelector(".profile__name");
 const profileDesc = document.querySelector(".profile__description");
+
 const cardTemplate = document.querySelector("#card-template");
 const cardsList = document.querySelector(".cards__list");
+
 const newPostModal = document.querySelector("#add-card-modal");
 const newPostBtn = document.querySelector(".profile__add-btn");
 const newPostExitButton = newPostModal.querySelector(".modal__close-btn");
-const cardLinkInput = document.querySelector("#add-card__link_input");
-const cardCaptionInput = document.querySelector("#add-card__name_input");
-const cardSubmitBtn = document.querySelector(".add-card__submit_btn");
+const cardLinkInput = newPostModal.querySelector("#add-card__link_input");
+const cardLink = newPostModal.querySelector(".add-card__link_input");
+const cardCaptionInput = newPostModal.querySelector("#add-card__name_input");
+const cardCaption = newPostModal.querySelector(".add-card__name_input");
+const cardForm = newPostModal.querySelector(".add-card__form");
 
 function getCardElement(card) {
   const cardElement = cardTemplate.content
@@ -65,8 +69,6 @@ function getCardElement(card) {
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
-  openModal(editModal);
-  openModal(newPostModal);
 }
 
 function closeModal(modal) {
@@ -78,6 +80,17 @@ function handleProfileFormSubmit(evt) {
   profileName.textContent = modalNameInput.value;
   profileDesc.textContent = modalDescInput.value;
   closeModal(editModal);
+}
+
+function handleCardSubmit(evt) {
+  evt.preventDefault();
+  const inputValues = {
+    caption: cardCaptionInput.value,
+    link: cardLinkInput.value,
+  };
+  console.log(inputValues);
+  const cardElement = getCardElement(inputValues);
+  cardsList.prepend(cardElement);
   closeModal(newPostModal);
 }
 
@@ -90,22 +103,19 @@ editButton.addEventListener("click", () => {
 
 exitModal.addEventListener("click", () => {
   closeModal(editModal);
-  closeModal(newPostModal);
 });
 
 newPostBtn.addEventListener("click", () => {
-  modalNameInput.value = profileName.textContent;
-  modalDescInput.value = profileDesc.textContent;
   openModal(newPostModal);
 });
 
-exitModal.addEventListener("click", () => {
+newPostExitButton.addEventListener("click", () => {
   closeModal(newPostModal);
 });
 
 profileFormElement.addEventListener("submit", handleProfileFormSubmit);
 
-profileFormElement.addEventListener("submit", handleProfileFormSubmit);
+cardForm.addEventListener("submit", handleCardSubmit);
 
 initialCards.forEach((card) => {
   const cardElement = getCardElement(card);
