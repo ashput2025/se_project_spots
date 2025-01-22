@@ -29,6 +29,11 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg",
     alt: "A long hallway with windows",
   },
+  {
+    name: "bridge",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
+    alt: ""
+  },
 ];
 
 const editModal = document.querySelector("#edit-modal");
@@ -52,6 +57,11 @@ const cardCaptionInput = newPostModal.querySelector("#add-card__name_input");
 const cardCaption = newPostModal.querySelector(".add-card__name_input");
 const cardForm = newPostModal.querySelector(".add-card__form");
 
+const previewModal = document.querySelector("#preview-modal");
+const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn_type-preview");
+const previewModalImgEl = previewModal.querySelector(".modal__img");
+const previewModalCaptionEl = previewModal.querySelector(".modal__caption");
+
 function getCardElement(card) {
   const cardElement = cardTemplate.content
     .querySelector(".card")
@@ -68,6 +78,18 @@ function getCardElement(card) {
 
   cardDeleteBtn.addEventListener('click', () =>{
 cardElement.remove();
+  });
+
+  cardLinkEl.addEventListener('click', () => {
+    openModal(previewModal);
+    previewModalImgEl.src = card.link;
+    previewModalCaptionEl.textContent = card.name;
+
+    console.log(previewModalImgEl.src);
+  });
+
+  previewModalCloseBtn.addEventListener('click', () =>{
+closeModal(previewModal);
   });
 
   cardNameEl.textContent = card.name;
@@ -95,8 +117,9 @@ function handleProfileFormSubmit(evt) {
 function handleCardSubmit(evt) {
   evt.preventDefault();
   const inputValues = {
-    caption: cardCaptionInput.value,
     link: cardLinkInput.value,
+    caption: cardCaptionInput.value,
+
   };
   console.log(inputValues);
   const cardElement = getCardElement(inputValues);
@@ -108,7 +131,6 @@ editButton.addEventListener("click", () => {
   modalNameInput.value = profileName.textContent;
   modalDescInput.value = profileDesc.textContent;
   openModal(editModal);
-  openModal(newPostModal);
 });
 
 exitModal.addEventListener("click", () => {
