@@ -32,7 +32,7 @@ const initialCards = [
   {
     name: "bridge",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
-    alt: ""
+    alt: "",
   },
 ];
 
@@ -58,7 +58,9 @@ const cardCaption = newPostModal.querySelector(".add-card__name_input");
 const cardForm = newPostModal.querySelector(".add-card__form");
 
 const previewModal = document.querySelector("#preview-modal");
-const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn_type-preview");
+const previewModalCloseBtn = previewModal.querySelector(
+  ".modal__close-btn_type-preview"
+);
 const previewModalImgEl = previewModal.querySelector(".modal__img");
 const previewModalCaptionEl = previewModal.querySelector(".modal__caption");
 
@@ -70,26 +72,24 @@ function getCardElement(card) {
   const cardNameEl = cardElement.querySelector(".card__title");
   const cardLinkEl = cardElement.querySelector(".card__image");
   const cardLikeBtn = cardElement.querySelector(".card__like-button");
-  const cardDeleteBtn = cardElement.querySelector(".card__delete-button")
+  const cardDeleteBtn = cardElement.querySelector(".card__delete-button");
 
-  cardLikeBtn.addEventListener('click', () =>{
+  cardLikeBtn.addEventListener("click", () => {
     cardLikeBtn.classList.toggle("card__like-button_liked");
   });
 
-  cardDeleteBtn.addEventListener('click', () =>{
-cardElement.remove();
+  cardDeleteBtn.addEventListener("click", () => {
+    cardElement.remove();
   });
 
-  cardLinkEl.addEventListener('click', () => {
+  cardLinkEl.addEventListener("click", () => {
     openModal(previewModal);
     previewModalImgEl.src = card.link;
     previewModalCaptionEl.textContent = card.name;
-
-    console.log(previewModalImgEl.src);
   });
 
-  previewModalCloseBtn.addEventListener('click', () =>{
-closeModal(previewModal);
+  previewModalCloseBtn.addEventListener("click", () => {
+    closeModal(previewModal);
   });
 
   cardNameEl.textContent = card.name;
@@ -119,7 +119,6 @@ function handleCardSubmit(evt) {
   const inputValues = {
     link: cardLinkInput.value,
     caption: cardCaptionInput.value,
-
   };
   console.log(inputValues);
   const cardElement = getCardElement(inputValues);
