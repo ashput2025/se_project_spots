@@ -29,6 +29,7 @@
   box-sizing: border-box;
   border-radius: 8px;
   padding: 32px 50px;
+  align-content: center;
 }
 
 .modal__close-btn {
@@ -69,21 +70,25 @@
   color: rgba(33, 33, 33, 0.7);
   font-size: 16px;
   line-height: 0.9;
+  font-weight: 500;
 }
 
 .modal__input {
   padding: 16px 12px;
   color: rgba(33, 33, 33, 1);
   border-color: rgba(33, 33, 33, 0.4);
+  font-weight: 500;
   font-size: 20px;
   line-height: 1;
   border-radius: 8px;
+  border-width: 1px;
   transition: border-color 0.4s;
 }
 
 .modal__input:hover {
   cursor: pointer;
   border-color: rgba(33, 33, 33, 1);
+  border-width: 1px;
 }
 
 .modal__submit-btn {
@@ -101,8 +106,6 @@
 
 .modal__container_type-preview {
   padding: 0;
-  height: 75%;
-  width: 80%;
   object-position: center;
   background-color: transparent;
 }
@@ -120,7 +123,6 @@
 }
 
 .modal__img {
-  position: relative;
   width: 100%;
   max-width: 80vw;
   max-height: 80vh;
@@ -142,12 +144,18 @@
   .modal {
     padding: 0 10px;
   }
+
   .modal__container {
     padding: 22px 12px 12px;
   }
   .modal__container_type-preview {
     width: fit-content;
     background-color: transparent;
+    padding: 0;
+  }
+  .modal__close-btn {
+    top: 17px;
+    right: 16px;
   }
   .modal__title {
     margin-bottom: 24px;
@@ -164,12 +172,13 @@
     width: 100%;
   }
   .modal__close-btn_type-preview {
-    top: -2%;
-    right: 1%;
+    top: -45px;
+    right: -1px;
   }
   .modal__img {
     min-height: auto;
     border-radius: 4px;
+    min-width: 288px;
   }
   .modal__caption {
     border-radius: 4px;

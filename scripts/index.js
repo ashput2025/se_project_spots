@@ -30,9 +30,9 @@ const initialCards = [
     alt: "A long hallway with windows",
   },
   {
-    name: "bridge",
+    name: "Golden Gate Bridge",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
-    alt: "",
+    alt: "Bridge over water",
   },
 ];
 
