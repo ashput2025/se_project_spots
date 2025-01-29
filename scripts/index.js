@@ -38,7 +38,7 @@ const initialCards = [
 
 const editModal = document.querySelector("#edit-modal");
 const editButton = document.querySelector(".profile__edit-btn");
-const exitModalExitBtn = editModal.querySelector(".modal__close-btn");
+const profileExitBtn =document.querySelector(".modal__close-btn");
 const profileFormElement = document.querySelector(".modal__form");
 const modalNameInput = document.querySelector("#profile__name_input");
 const modalDescInput = document.querySelector("#profile__description_input");
@@ -130,7 +130,7 @@ editButton.addEventListener("click", () => {
   openModal(editModal);
 });
 
-exitModalExitBtn.addEventListener("click", () => {
+profileExitBtn.addEventListener("click", () => {
   closeModal(editModal);
 });
 
