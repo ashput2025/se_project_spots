@@ -104,13 +104,13 @@
   cursor: pointer;
 }
 
-.modal__container_type-preview {
+.modal__container_type_preview {
   padding: 0;
   object-position: center;
   background-color: transparent;
 }
 
-.modal__close-btn_type-preview {
+.modal__close-btn_type_preview {
   background-image: url(../images/close-light.svg);
   opacity: 1;
   top: 0;
@@ -148,7 +148,7 @@
   .modal__container {
     padding: 22px 12px 12px;
   }
-  .modal__container_type-preview {
+  .modal__container_type_preview {
     width: fit-content;
     background-color: transparent;
     padding: 0;
@@ -171,7 +171,7 @@
   .modal__submit-btn {
     width: 100%;
   }
-  .modal__close-btn_type-preview {
+  .modal__close-btn_type_preview {
     top: -45px;
     right: -1px;
   }
