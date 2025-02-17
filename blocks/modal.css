@@ -75,6 +75,7 @@
 
 .modal__input {
   padding: 16px 12px;
+  margin-bottom: 0;
   color: rgba(33, 33, 33, 1);
   border-color: rgba(33, 33, 33, 0.4);
   font-weight: 500;
@@ -89,6 +90,13 @@
   cursor: pointer;
   border-color: rgba(33, 33, 33, 1);
   border-width: 1px;
+}
+
+.modal__error {
+  display: block;
+  margin-bottom: 10px;
+  color: rgba(255, 0, 0, 0.7);
+  line-height: 0.9;
 }
 
 .modal__submit-btn {
