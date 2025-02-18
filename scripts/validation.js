@@ -1,40 +1,78 @@
-const showInputError = (formEl, inputEl, errorMsg) => {
+const settings = {
+  formSelector: ".modal__form",
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__submit-btn",
+  inactiveButtonClass: "modal__submit-btn-disabled",
+  inputErrorClass: "modal__input_state_error",
+};
+
+const showInputError = (formEl, inputEl, config, errorMsg) => {
   const errorMsgID = inputEl.id + "-error";
   const errorMsgEl = document.querySelector("#" + errorMsgID);
   errorMsgEl.textContent = errorMsg;
-  console.log(errorMsgID);
+  inputEl.classList.add(config.inputErrorClass);
 };
 
-const checkInputValidity = (formEl, inputEl) => {
+const hideInputError = (formEl, inputEl, config, errorMsg) => {
+  const errorMsgID = inputEl.id + "-error";
+  const errorMsgEl = document.querySelector("#" + errorMsgID);
+  errorMsgEl.textContent = "";
+  inputEl.classList.remove(config.inputErrorClass);
+};
+
+const checkInputValidity = (formEl, inputEl, config) => {
   if (!inputEl.validity.valid) {
-    showInputError(formEl, inputEl, inputEl.validationMessage);
+    showInputError(formEl, inputEl, config, inputEl.validationMessage);
   } else {
-    hideInputError(formEl, inputEl);
+    hideInputError(formEl, inputEl, config);
+  }
+};
+const hasInvalidInput = (inputList, config) => {
+  return inputList.some((input) => {
+    return !input.validity.valid;
+  });
+};
+
+const toggleButtonState = (inputList, buttonEl, config) => {
+  if (hasInvalidInput(inputList, config)) {
+    disableButton(buttonEl, config);
+  } else {
+    buttonEl.classList.remove(config.inactiveButtonClass);
+    buttonEl.disabled = false;
   }
 };
 
-const setEventListener = (formEl) => {
-  const inputList = Array.from(formEl.querySelectorAll(".modal__input"));
+const disableButton = (buttonEl, config) => {
+  buttonEl.disabled = true;
+  buttonEl.classList.add(config.inactiveButtonClass);
+};
 
-  const buttonElement = formEl.querySelector(".modal__submit-btn");
+const resetValidation = (formEl, inputList, config) => {
+  inputList.forEach((input) => {
+    hideInputError(formEl, input, config);
+  });
+};
 
-  // toggleButtonState(inputList, buttonElement);
+function setEventListener(formEl, config) {
+  const inputList = Array.from(formEl.querySelectorAll(config.inputSelector));
+
+  const buttonEl = formEl.querySelector(config.submitButtonSelector);
+
+  toggleButtonState(inputList, buttonEl, config);
 
   inputList.forEach((inputEl) => {
     inputEl.addEventListener("input", () => {
       checkInputValidity(formEl, inputEl);
-      // toggleButtonState(inputList, buttonElement);
+      toggleButtonState(inputList, buttonEl, config);
     });
   });
-};
+}
 
-/* define togglebuttonState func */
-
-const enableValidation = () => {
-  const formList = document.querySelectorAll(".modal__form");
+const enableValidation = (config) => {
+  const formList = document.querySelectorAll(config.formSelector);
   formList.forEach((formEl) => {
-    setEventListener(formEl);
+    setEventListener(formEl, config);
   });
 };
 
-enableValidation();
+enableValidation(settings);
