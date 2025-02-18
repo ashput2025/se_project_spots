@@ -62,7 +62,7 @@ function setEventListener(formEl, config) {
 
   inputList.forEach((inputEl) => {
     inputEl.addEventListener("input", () => {
-      checkInputValidity(formEl, inputEl);
+      checkInputValidity(formEl, inputEl, config);
       toggleButtonState(inputList, buttonEl, config);
     });
   });
