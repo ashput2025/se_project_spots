@@ -32,7 +32,7 @@ const initialCards = [
   {
     name: "Golden Gate Bridge",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
-    alt: "Bridge over water",
+    alt: "Bridge over body of water",
   },
 ];
 
@@ -56,8 +56,6 @@ const cardLink = newPostModal.querySelector(".add-card__link_input");
 const cardCaptionInput = newPostModal.querySelector("#add-card__name_input");
 const cardCaption = newPostModal.querySelector(".add-card__name_input");
 const cardForm = newPostModal.querySelector("#add-card__form");
-
-console.log(cardForm);
 
 const previewModal = document.querySelector("#preview-modal");
 const previewModalCloseBtn = previewModal.querySelector(
