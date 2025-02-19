@@ -65,6 +65,8 @@ const previewModalCloseBtn = previewModal.querySelector(
 const previewModalImgEl = previewModal.querySelector(".modal__img");
 const previewModalCaptionEl = previewModal.querySelector(".modal__caption");
 
+const modals = document.querySelectorAll(".modal");
+
 function getCardElement(card) {
   const cardElement = cardTemplate.content
     .querySelector(".card")
@@ -125,6 +127,24 @@ function handleCardSubmit(evt) {
   evt.target.reset();
   disableButton(cardSubmitBtn, settings);
 }
+
+modals.forEach((modal) => {
+  modal.addEventListener("click", (evt) => {
+    if (evt.target === evt.currentTarget) {
+      closeModal(modal);
+    }
+  });
+});
+
+document.addEventListener("keydown", (evt) => {
+  if (evt.key === "Escape") {
+    modals.forEach((modal) => {
+      if (modal.classList.contains("modal_is-opened")) {
+        closeModal(modal);
+      }
+    });
+  }
+});
 
 editButton.addEventListener("click", () => {
   modalNameInput.value = profileName.textContent;

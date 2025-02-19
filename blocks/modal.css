@@ -179,10 +179,13 @@
   }
   .modal__label {
     margin-bottom: 8px;
+    margin-bottom: 24px;
   }
   .modal__input {
     font-size: 16px;
-    margin-bottom: 24px;
+  }
+  .modal__error {
+    font-size: 16px;
   }
   .modal__submit-btn {
     width: 100%;
