@@ -116,7 +116,7 @@
   cursor: pointer;
 }
 
-.modal__submit-btn-disabled {
+.modal__submit-btn_disabled {
   opacity: 50%;
 }
 

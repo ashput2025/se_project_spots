@@ -2,13 +2,13 @@ const settings = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__submit-btn",
-  inactiveButtonClass: "modal__submit-btn-disabled",
+  inactiveButtonClass: "modal__submit-btn_disabled",
   inputErrorClass: "modal__input_state_error",
 };
 
 const showInputError = (formEl, inputEl, config, errorMsg) => {
   const errorMsgID = inputEl.id + "-error";
-  const errorMsgEl = document.querySelector("#" + errorMsgID);
+  const errorMsgEl = formEl.querySelector("#" + errorMsgID);
   errorMsgEl.textContent = errorMsg;
   inputEl.classList.add(config.inputErrorClass);
 };
@@ -27,7 +27,7 @@ const checkInputValidity = (formEl, inputEl, config) => {
     hideInputError(formEl, inputEl, config);
   }
 };
-const hasInvalidInput = (inputList, config) => {
+const hasInvalidInput = (inputList) => {
   return inputList.some((input) => {
     return !input.validity.valid;
   });
