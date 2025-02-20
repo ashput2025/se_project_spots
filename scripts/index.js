@@ -148,6 +148,7 @@ modals.forEach((modal) => {
 editButton.addEventListener("click", () => {
   modalNameInput.value = profileName.textContent;
   modalDescInput.value = profileDesc.textContent;
+  resetValidation(editModal, [modalNameInput, modalDescInput]);
   openModal(editModal);
 });
 
